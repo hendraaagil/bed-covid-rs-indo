@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    {
+      "source": "/api",
+      "destination": "https://rs-bed-covid-api.vercel.app/"
+    }
+  ]
+}
