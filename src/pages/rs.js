@@ -30,13 +30,7 @@ const RumahSakit = () => {
       <Stack w="full" spacing={4}>
         {data ? (
           data.hospitals.map((hosp) => (
-            <HospitalCard
-              key={hosp.id}
-              hosp={hosp}
-              city={city}
-              prov={prov}
-              type={type}
-            />
+            <HospitalCard key={hosp.id} hosp={hosp} type={type} />
           ))
         ) : (
           <Spinner

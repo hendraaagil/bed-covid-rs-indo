@@ -1,11 +1,13 @@
 import useSWR from 'swr';
+import { useRouter } from 'next/router';
 import { Button, ButtonGroup, Heading, Stack, Text } from '@chakra-ui/react';
 import { FaArrowRight, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const HospitalCard = ({ city, hosp, prov, type }) => {
+const HospitalCard = ({ hosp, type }) => {
   const { address, bed_availability: bed, id, info, name, phone, queue } = hosp;
+  const router = useRouter();
 
   const { data } = useSWR(
     `${process.env.NEXT_PUBLIC_API_URL}/get-hospital-map?hospitalid=${id}`,
@@ -43,7 +45,7 @@ const HospitalCard = ({ city, hosp, prov, type }) => {
             <>
               <Text fontWeight="600">Tersedia : {bed}</Text>
               <Text fontSize="sm" fontWeight="500">
-                {queue || 'Tanpa'} antrian
+                {queue || 'Tanpa'} antrean
               </Text>
             </>
           )}
@@ -81,11 +83,10 @@ const HospitalCard = ({ city, hosp, prov, type }) => {
           </Button>
           <Button
             as="a"
-            href={`http://yankes.kemkes.go.id/app/siranap/tempat_tidur?kode_rs=${id}&jenis=${type}&propinsi=${prov}&kabkota=${city}`}
-            rel="noreferrer"
-            target="_blank"
+            onClick={() => router.push(`/rs-detail?id=${id}&type=${type}`)}
             rightIcon={<FaArrowRight />}
             mt={[2, 0]}
+            cursor="pointer"
           >
             Detail
           </Button>
