@@ -1,10 +1,10 @@
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
 import { Button, Spinner, Stack } from '@chakra-ui/react';
+import { FaArrowLeft } from 'react-icons/fa';
 
 import PageContainer from '@/components/PageContainer';
 import HospitalCard from '@/components/HospitalCard';
-import { FaArrowLeft } from 'react-icons/fa';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
