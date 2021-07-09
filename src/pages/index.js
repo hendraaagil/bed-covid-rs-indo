@@ -1,10 +1,10 @@
 import PageContainer from '@/components/PageContainer';
-import Actions from '@/components/Actions';
+import Search from '@/components/Search';
 
 export default function Home() {
   return (
-    <PageContainer title="Next.js Chakra Starter">
-      <Actions switchName="Second Page" />
+    <PageContainer title="Ketersediaan Tempat Tidur Rumah Sakit">
+      <Search />
     </PageContainer>
   );
 }

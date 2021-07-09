@@ -11,7 +11,10 @@ const ToggleMode = () => {
       onClick={toggleColorMode}
       pos="fixed"
       m={4}
+      bottom={0}
       rounded="md"
+      zIndex="docked"
+      sx={{ backdropFilter: 'blur(10px)' }}
     />
   );
 };

@@ -1,7 +1,7 @@
-const title = 'Next.js Chakra Starter | Hendra Agil';
+const title = 'Bed Covid RS Indonesia';
 const description =
-  'An opinionated starter project with Next.js and Chakra UI. Created by hendraaagil';
-const url = 'https://nextjs-chakra-hendraaagil.vercel.app';
+  'Sebuah website yang menyediakan informasi ketersediaan tempat tidur rumah sakit di seluruh Indonesia.';
+const url = 'https://bed-covid-rs-indo.vercel.app';
 
 const SEO = {
   title,
@@ -14,7 +14,7 @@ const SEO = {
     description,
     images: [
       {
-        url: `https://og-image.vercel.app/**Next.js%20Chakra**%20Starter.png?theme=light&md=1&fontSize=125px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg&images=https%3A%2F%2Fraw.githubusercontent.com%2Fchakra-ui%2Fchakra-ui%2Fbf775929a6d73a3aa69e44d5d38542449871475c%2Flogo%2Flogomark-colored.svg`,
+        url: `${url}/og-image`,
         alt: title,
         width: 2048,
         height: 1170,

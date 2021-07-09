@@ -1,18 +1,21 @@
-import { HStack, Link, Text, useColorMode, VStack } from '@chakra-ui/react';
+import { HStack, Link, useColorMode, VStack } from '@chakra-ui/react';
+import { FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   const { colorMode } = useColorMode();
 
   return (
     <VStack
-      py={4}
+      py={5}
       bg={colorMode === 'light' ? 'gray.100' : 'gray.800'}
+      fontSize="sm"
+      fontWeight="600"
       transition="background 100ms linear"
     >
-      <HStack fontSize="sm" fontWeight="600">
-        <Text>Created by</Text>
+      <HStack>
+        <FaGithub size="20px" />
         <Link href="https://github.com/hendraaagil" isExternal>
-          Hendra Agil
+          GitHub Repository
         </Link>
       </HStack>
     </VStack>
