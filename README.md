@@ -7,18 +7,28 @@ Website ini digunakan sebagai tempat mencari informasi terkait ketersediaan temp
 ## Instalasi
 
 1. Klon repositori ini <br />
-   `git clone https://github.com/hendraaagil/bed-covid-rs-indo.git`
+   ```
+   git clone https://github.com/hendraaagil/bed-covid-rs-indo.git
+   ```
 2. Unduh semua dependensi <br />
-   `yarn`
+   ```
+   yarn
+   ```
 3. Konfigurasi _file_ `.env` <br />
-   `NEXT_PUBLIC_API_URL`
+   ```
+   NEXT_PUBLIC_API_URL = ''
+   ```
 4. Jalankan _project_ <br />
-   `yarn dev`
+   ```
+   yarn dev
+   ```
 
 ## Teknologi yang digunakan
 
 - [Next.js](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
+
+Menggunakan _starter template_: [hendraaagil/next-chakra-starter](https://github.com/hendraaagil/next-chakra-starter).
 
 ## Sumber data
 

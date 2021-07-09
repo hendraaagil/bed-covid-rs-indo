@@ -14,7 +14,10 @@ const Footer = () => {
     >
       <HStack>
         <FaGithub size="20px" />
-        <Link href="https://github.com/hendraaagil" isExternal>
+        <Link
+          href="https://github.com/hendraaagil/bed-covid-rs-indo"
+          isExternal
+        >
           GitHub Repository
         </Link>
       </HStack>
