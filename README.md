@@ -2,7 +2,7 @@
 
 ![Bed Covid RS Indonesia](public/og-image.png)
 
-Wesbite yang memberikan informasi terkait ketersediaan rumah sakit dan tempat tidur rumah sakit untuk pasien covid-19 ataupun non-covid di Indonesia.
+Website yang memberikan informasi terkait ketersediaan rumah sakit dan tempat tidur rumah sakit untuk pasien covid-19 ataupun non-covid di Indonesia.
 
 ## Instalasi
 
