@@ -30,6 +30,11 @@ Wesbite yang memberikan informasi terkait ketersediaan rumah sakit dan tempat ti
 
 Menggunakan _starter template_: [hendraaagil/next-chakra-starter](https://github.com/hendraaagil/next-chakra-starter).
 
+## Fitur
+
+- [x] Menampilkan daftar rumah sakit berdasarkan provinsi dan kabupaten / kota.
+- [x] Menampilkan detail rumah sakit.
+
 ## Sumber data
 
 Sumber data website ini berasal dari publik API: [satyawikananda/rs-bed-covid-indo-api](https://github.com/satyawikananda/rs-bed-covid-indo-api).
