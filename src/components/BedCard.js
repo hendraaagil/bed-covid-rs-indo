@@ -7,13 +7,12 @@ import {
   Heading,
   Stack,
   Text,
-  useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 const BedCard = ({ detail }) => {
   const { stats, time } = detail;
   const { bed_available: bed, bed_empty: empty, queue, title } = stats;
-  const { colorMode } = useColorMode();
 
   return (
     <AccordionItem rounded="md" shadow="md" overflow="hidden">
@@ -22,7 +21,7 @@ const BedCard = ({ detail }) => {
         p={4}
         rounded="md"
         overflow="hidden"
-        _expanded={{ bg: colorMode === 'light' ? 'gray.50' : 'gray.700' }}
+        _expanded={{ bg: useColorModeValue('gray.50', 'gray.700') }}
       >
         <Stack align="start" textAlign="left">
           <Heading as="h4" size="md">
