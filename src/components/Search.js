@@ -11,6 +11,7 @@ import {
   Spinner,
   Text,
 } from '@chakra-ui/react';
+import { BiChevronDown } from 'react-icons/bi';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -48,6 +49,7 @@ const Search = () => {
       </Heading>
       {data ? (
         <Select
+          icon={<BiChevronDown />}
           placeholder="Pilih Provinsi ..."
           value={prov}
           onChange={(event) => setProv(event.target.value)}
@@ -72,6 +74,7 @@ const Search = () => {
         Pilih Kabupaten / Kota
       </Heading>
       <Select
+        icon={load ? <Spinner /> : <BiChevronDown />}
         placeholder={
           !prov.length
             ? 'Silahkan Pilih Provinsi Terlebih Dahulu'
