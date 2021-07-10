@@ -10,11 +10,17 @@ const ToggleMode = () => {
       icon={colorMode === 'light' ? <FaRegMoon /> : <FaRegSun />}
       onClick={toggleColorMode}
       pos="fixed"
-      m={4}
+      m={3}
       bottom={0}
       rounded="md"
       zIndex="docked"
-      sx={{ backdropFilter: 'blur(10px)' }}
+      sx={{
+        bg:
+          colorMode === 'light'
+            ? 'rgba(237, 242, 247, 0.5)'
+            : 'rgba(26, 32, 44, 0.5)',
+        backdropFilter: 'blur(10px)',
+      }}
     />
   );
 };

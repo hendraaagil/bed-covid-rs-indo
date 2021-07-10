@@ -42,12 +42,12 @@ const HospitalCard = ({ hosp, type }) => {
           {bed === 0 ? (
             <Text fontWeight="600">Penuh!</Text>
           ) : (
-            <>
+            <Stack textAlign="center">
               <Text fontWeight="600">Tersedia : {bed}</Text>
               <Text fontSize="sm" fontWeight="500">
                 {queue || 'Tanpa'} antrean
               </Text>
-            </>
+            </Stack>
           )}
         </Stack>
       </Stack>
