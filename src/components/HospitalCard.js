@@ -73,7 +73,10 @@ const HospitalCard = ({ hosp, type }) => {
         )}
       </Stack>
       {beds && (
-        <Stack direction={['column', 'column', 'row']} justify="space-between">
+        <Stack
+          direction={['column', 'column', beds.length >= 5 ? 'column' : 'row']}
+          justify="space-between"
+        >
           {beds.map((be, index) => (
             <Box
               key={String(index)}
