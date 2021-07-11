@@ -94,9 +94,7 @@ const Search = () => {
         <Stack direction={['column', 'column', 'row']} py={2}>
           <Text>Pilih Tempat Tidur : </Text>
           <Radio value="1">Covid 19</Radio>
-          <Radio value="2" isDisabled>
-            Non-Covid 19 (API dalam perbaikan)
-          </Radio>
+          <Radio value="2">Non-Covid 19</Radio>
         </Stack>
       </RadioGroup>
       <Button
