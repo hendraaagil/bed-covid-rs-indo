@@ -47,29 +47,19 @@ const Search = () => {
       <Heading as="h3" size="lg" py={2}>
         Pilih Provinsi
       </Heading>
-      {data ? (
-        <Select
-          icon={<BiChevronDown />}
-          placeholder="Pilih Provinsi ..."
-          value={prov}
-          onChange={(event) => setProv(event.target.value)}
-        >
-          {data.provinces.map((province) => (
-            <option key={province.id} value={province.id}>
-              {province.name}
-            </option>
-          ))}
-        </Select>
-      ) : (
-        <Spinner
-          p={2}
-          thickness="6px"
-          speed="0.65s"
-          emptyColor="gray.200"
-          color="blue.600"
-          size="lg"
-        />
-      )}
+      <Select
+        icon={data ? <BiChevronDown /> : <Spinner />}
+        placeholder="Pilih Provinsi ..."
+        value={prov}
+        isDisabled={!data}
+        onChange={(event) => setProv(event.target.value)}
+      >
+        {data?.provinces.map((province) => (
+          <option key={province.id} value={province.id}>
+            {province.name}
+          </option>
+        ))}
+      </Select>
       <Heading as="h3" size="lg" py={2}>
         Pilih Kabupaten / Kota
       </Heading>
@@ -80,8 +70,8 @@ const Search = () => {
             ? 'Silahkan Pilih Provinsi Terlebih Dahulu'
             : 'Pilih Kabupaten / Kota ...'
         }
-        isDisabled={!prov.length || load}
         value={city}
+        isDisabled={!prov.length || load}
         onChange={(event) => setCity(event.target.value)}
       >
         {cities.map((cit) => (
