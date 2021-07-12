@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
-import { Button, Spinner, Stack } from '@chakra-ui/react';
+import { Button, Spinner, Stack, Text } from '@chakra-ui/react';
 import { FaArrowLeft } from 'react-icons/fa';
 
 import PageContainer from '@/components/PageContainer';
@@ -17,6 +17,22 @@ const RumahSakit = () => {
     fetcher
   );
 
+  const showData = (hospitals) => {
+    let content;
+    if (hospitals.length !== 0) {
+      content = hospitals.map((hosp) => (
+        <HospitalCard key={hosp.id} hosp={hosp} type={type} />
+      ));
+    } else {
+      content = (
+        <Text fontWeight="600" fontSize="lg">
+          Data tidak ditemukan
+        </Text>
+      );
+    }
+    return content;
+  };
+
   return (
     <PageContainer title="Daftar Rumah Sakit">
       <Button
@@ -29,12 +45,9 @@ const RumahSakit = () => {
       </Button>
       <Stack w="full" spacing={4}>
         {data ? (
-          data.hospitals.map((hosp) => (
-            <HospitalCard key={hosp.id} hosp={hosp} type={type} />
-          ))
+          showData(data.hospitals)
         ) : (
           <Spinner
-            mt={5}
             p={2}
             thickness="6px"
             speed="0.65s"

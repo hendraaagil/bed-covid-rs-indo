@@ -57,7 +57,6 @@ const RumahSakit = () => {
         </Stack>
       ) : (
         <Spinner
-          mt={5}
           p={2}
           thickness="6px"
           speed="0.65s"

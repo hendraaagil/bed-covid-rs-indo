@@ -6,6 +6,7 @@ import {
   ButtonGroup,
   Divider,
   Heading,
+  SimpleGrid,
   Stack,
   Text,
   useColorModeValue,
@@ -73,37 +74,47 @@ const HospitalCard = ({ hosp, type }) => {
         )}
       </Stack>
       {beds && (
-        <Stack
-          direction={['column', 'column', beds.length >= 5 ? 'column' : 'row']}
-          justify="space-between"
-        >
-          {beds.map((be, index) => (
+        <SimpleGrid columns={[1, 2, 3]} spacing={2}>
+          {beds.length !== 0 ? (
+            beds.map((be, index) => (
+              <Box
+                key={String(index)}
+                p={3}
+                textAlign="center"
+                bg={bgCard}
+                rounded="md"
+                shadow="inner"
+                borderWidth={be.available <= 0 && '2px'}
+                borderColor={be.available <= 0 && 'red.500'}
+              >
+                <Text
+                  fontSize="2xl"
+                  fontWeight="600"
+                  color={be.available <= 0 && 'red.500'}
+                >
+                  {be.available}
+                </Text>
+                <Text fontWeight="500">{be.bed_class}</Text>
+                <Text fontWeight="500" fontSize="sm">
+                  {be.room_name}
+                </Text>
+                <Divider my={2} />
+                <Text fontSize="xs">{be.info}</Text>
+              </Box>
+            ))
+          ) : (
             <Box
-              key={String(index)}
               p={3}
+              fontWeight="500"
               textAlign="center"
               bg={bgCard}
               rounded="md"
               shadow="inner"
-              borderWidth={be.available <= 0 && '2px'}
-              borderColor={be.available <= 0 && 'red.500'}
             >
-              <Text
-                fontSize="2xl"
-                fontWeight="600"
-                color={be.available <= 0 && 'red.500'}
-              >
-                {be.available}
-              </Text>
-              <Text fontWeight="500">{be.bed_class}</Text>
-              <Text fontWeight="500" fontSize="sm">
-                {be.room_name}
-              </Text>
-              <Divider my={2} />
-              <Text fontSize="xs">{be.info}</Text>
+              Data tidak ditemukan
             </Box>
-          ))}
-        </Stack>
+          )}
+        </SimpleGrid>
       )}
       <Stack
         direction={['column', 'column', 'row']}
