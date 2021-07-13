@@ -42,10 +42,10 @@ const RumahSakit = () => {
             as="a"
             href={`tel:${data.data.phone}`}
             leftIcon={<FaPhone />}
-            isDisabled={!data.data.phone}
+            isDisabled={data.data.phone === 'hotline tidak tersedia'}
             w="fit-content"
           >
-            {data.data.phone || 'Tidak tersedia'}
+            {data.data.phone}
           </Button>
           <Accordion allowMultiple>
             <Stack w="full" pt={2} spacing={4}>
